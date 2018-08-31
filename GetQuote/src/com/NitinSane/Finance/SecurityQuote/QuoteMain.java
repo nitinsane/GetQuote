@@ -4,8 +4,15 @@ import java.util.concurrent.TimeUnit;
 
 import com.NitinSane.Finance.SecurityQuote.Alphavantage.AlphavantageQuoteSource;
 
+/**
+ * @author Nitin Sane
+ *
+ */
 public class QuoteMain {
 
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		
 		

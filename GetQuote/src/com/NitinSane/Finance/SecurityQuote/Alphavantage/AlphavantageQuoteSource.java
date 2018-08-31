@@ -16,6 +16,9 @@ import com.google.gson.JsonParser;
 
 public class AlphavantageQuoteSource implements QuoteSource {
 
+	/* (non-Javadoc)
+	 * @see com.NitinSane.Finance.SecurityQuote.QuoteSource#getQuote(java.lang.String)
+	 */
 	@Override
 	public Quote getQuote(String symbol) {
 		final String baseUrl = "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&outputsize=compact&apikey=1WFQMZK32J25S388";

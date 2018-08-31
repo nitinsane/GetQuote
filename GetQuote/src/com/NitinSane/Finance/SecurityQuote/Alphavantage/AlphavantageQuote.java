@@ -9,6 +9,11 @@ public class AlphavantageQuote implements Quote {
 	private String ticker;
 	private String lastPrice;
 	
+	/**
+	 * @param ticker
+	 * @param tradeDate
+	 * @param lastPrice
+	 */
 	public AlphavantageQuote (String ticker, String tradeDate, String lastPrice)
 	{
 		this.ticker = ticker;
