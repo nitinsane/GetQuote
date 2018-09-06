@@ -22,8 +22,12 @@ public class QuoteMain {
 		for(int i=0; i < args.length; i++) {
 			Quote q = quoteSource.getQuote (args[i]);
 			
-			System.err.println(q.getTicker() + "," + q.getLastPrice() + "," + q.getTradeDate());
-			System.out.println(q.getTicker() + "," + q.getLastPrice() + "," + q.getTradeDate());
+			if (q != null) {		
+				System.err.println(q.getTicker() + "," + q.getLastPrice() + "," + q.getTradeDate());
+				System.out.println(q.getTicker() + "," + q.getLastPrice() + "," + q.getTradeDate());
+			} else {
+				System.err.println("Invalid symbol " + args [i]);
+			}
 			
 			try {
 				TimeUnit.SECONDS.sleep(15);

@@ -26,6 +26,9 @@ public class AlphavantageQuoteSource implements QuoteSource {
 		
 		
 		try {
+			
+			final String SymbolString = "01. symbol";
+			
 			URLConnection connection = new URL(queryURL).openConnection();
 			connection.setRequestProperty("Content-Type", "application/json");
 			
@@ -38,10 +41,15 @@ public class AlphavantageQuoteSource implements QuoteSource {
 			
 			JsonElement jelement = new JsonParser().parse(reader);
 			JsonObject  jobject = jelement.getAsJsonObject();
-			jobject = jobject.getAsJsonObject("Global Quote");			
+			jobject = jobject.getAsJsonObject("Global Quote");
+			
+			// check if there are any child elements
+			if (! jobject.has (SymbolString))
+				return null;
+			
 
 			
-			return new AlphavantageQuote (jobject.get("01. symbol").getAsString (),
+			return new AlphavantageQuote (jobject.get(SymbolString).getAsString (),
 					jobject.get("07. latest trading day").getAsString (),
 					jobject.get("05. price").getAsString ());
 			
