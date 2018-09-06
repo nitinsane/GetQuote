@@ -28,6 +28,8 @@ public class AlphavantageQuoteSource implements QuoteSource {
 		try {
 			
 			final String SymbolString = "01. symbol";
+			final String TradingDayString = "07. latest trading day";
+			final String PriceString = "05. price";
 			
 			URLConnection connection = new URL(queryURL).openConnection();
 			connection.setRequestProperty("Content-Type", "application/json");
@@ -50,8 +52,8 @@ public class AlphavantageQuoteSource implements QuoteSource {
 
 			
 			return new AlphavantageQuote (jobject.get(SymbolString).getAsString (),
-					jobject.get("07. latest trading day").getAsString (),
-					jobject.get("05. price").getAsString ());
+					jobject.get(TradingDayString).getAsString (),
+					jobject.get(PriceString).getAsString ());
 			
 			
 		} catch (MalformedURLException e) {
