@@ -37,6 +37,22 @@ public class AlphavantageQuote implements Quote {
 		return lastPrice;
 	}
 
+	public double getOpenPrice () {
+		return 0;
+	}
+	public double getHighPrice () {
+		return 0;
+	}
+	public double getLowPrice () {
+		return 0;
+	}
+	public double getClosePrice () {
+		return 0;
+	}
+	public double getTradeVolume () {
+		return 0;
+	}
+
 }
 
 class GlobalQuote {

@@ -9,4 +9,9 @@ public interface Quote {
 	String getTicker ();
 	String getTradeDate ();
 	String getLastPrice ();
+	double getOpenPrice ();
+	double getHighPrice ();
+	double getLowPrice ();
+	double getClosePrice ();
+	double getTradeVolume ();
 }
