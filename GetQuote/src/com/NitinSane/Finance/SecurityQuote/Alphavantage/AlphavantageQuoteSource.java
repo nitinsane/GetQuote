@@ -46,7 +46,7 @@ public class AlphavantageQuoteSource implements QuoteSource {
 			jobject = jobject.getAsJsonObject("Global Quote");
 			
 			// check if there are any child elements
-			if (! jobject.has (SymbolString))
+			if (jobject == null || (! jobject.has (SymbolString)))
 				return null;
 			
 
